@@ -14,6 +14,13 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
 - **machine-id**: we are fetching system's base board's serial number & saving it in _/.pickcel/machine-id_ . It might be used to generate license key in the future.
 - **ip**: we are using a script that will fetch local ip if available & store it in _/.pickcel/ip_. If the system is not connected to any network, it'll save _127.0.0.1_ in the file. This is a work in progess.
 
+## TLDR:
+
+- On first boot, wait for a few minutes for the docker images to be loaded & for the server to start.
+- Then connect to a network, get local ip & set `SERVER_NAME` & `PICKCEL_SERVER_HOST` in _.env_ to that ip.
+- Run `docker compose restart`.
+- Done!
+
 ## Steps:
 
 - Install this ISO in your system. All the steps are automated, which means that it will automatically choose keyboard keybord layout, time zone, etc & create a `sudo` account. this account will is meant for us, not for client. So it will have super user priviliges. Currenlty it is
