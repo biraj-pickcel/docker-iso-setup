@@ -4,6 +4,7 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
 
 ## Changes:
 
+- **added redis container**
 - **automatic restoration:** upon installation, our mongo data (dump files) which we were restoring manually will now be automatically restored
 - **automatic server start:** on boot, our server will start automatically
 - **automatic backup:** a cron job would be there which will take backup of our mongo databsae every day & will delete any backups that are 3 days or older
