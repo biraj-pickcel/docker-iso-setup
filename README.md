@@ -104,3 +104,5 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
   ```
 
 - This will restart our server & we're ready to go.
+
+To test the scripts & services that are being used in the ISO, look at _scripts_ & _services_ directories in [this repo](https://github.com/biraj-pickcel/custom-iso-with-docker).
