@@ -24,6 +24,8 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
 
 ## Steps:
 
+- Before installing, make sure that **secure boot is disabled** in your BIOS.
+
 - Install this ISO in your system. All the steps are automated, which means that it will automatically choose keyboard keybord layout, time zone, etc & create a `sudo` account. this account will is meant for us, not for client. So it will have super user priviliges. Currenlty it is
 
   ```
@@ -40,7 +42,22 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
 
 - After installation, login as `pickcel` & wait for about 3-4 minutes. This wait is only required on first boot as it will load our Docker images, which are quite large in size.
 
-- **note: all the following commands are meant to be run on host system unless the container is explictly mentioned**
+- **Note: All the following commands are meant to be run on host system unless the container is explictly mentioned.**
+
+- Also to avoid the confusion & know whether you're in our host system or inside the docker system, you can look at the prompt. First check out this image
+  ![Screenshot](images/host-vs-container.png)
+
+  As you can see, host system (left half) will show current directory like
+
+  ```
+  root@biraj-pc:/.pickcel# pwd
+  ```
+
+  whereas inside docker (right half), it would just be
+
+  ```
+  # pwd
+  ```
 
 - Switch to super user with `sudo su` as docker commands can only be run by root in this setup.
 
