@@ -47,7 +47,7 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
 - Also to avoid the confusion & know whether you're in our host system or inside the docker system, you can look at the prompt. First check out this image
   ![Screenshot](images/host-vs-container.png)
 
-  As you can see, host system (left half) will show current directory like
+  As you can see, host system's prompt (left half) will show current directory like
 
   ```
   root@biraj-pc:/.pickcel# pwd
@@ -127,7 +127,7 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
   uuids
   ```
 
-- Now exit `mongosh` & mongo container using `exit` command twice (one for mongo shenn & then one for our container)
+- Now exit `mongosh` & mongo container using `exit` command twice (one for mongosh & then one for our container)
 
   ```
   docker> exit
