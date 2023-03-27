@@ -40,6 +40,8 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
 
 - After installation, login as `pickcel` & wait for about 3-4 minutes. This wait is only required on first boot as it will load our Docker images, which are quite large in size.
 
+- **note: all the following commands are meant to be run on host system unless the container is explictly mentioned**
+
 - Switch to super user with `sudo su` as docker commands can only be run by root in this setup.
 
 - You can check if all the images are loaded on not using
@@ -55,7 +57,7 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
   - pickcel/nginxv3
   - pickcel/redis
 
-- Check if our containers are running using
+- Check if all of our containers are running using
 
   ```
   # docker ps
@@ -69,7 +71,51 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
   # docker exec -it mongo sh
   ```
 
-- After this, you'll be inside our mongo container. There you can use the `mongosh` command to check if our database (whose name is _docker_ in this case) exists or not. Once you've checked this, exit out of mongo container (using Ctrl+D).
+- After this, you'll be inside our mongo container. There you can use the `mongosh` command to check if our database (whose name is _docker_ in this case) exists or not.
+
+  ```
+  # mongosh  (inside the container)
+  --- now we're in mongo shell inside our mongo container ---
+  test> use docker  (switiching to our database for verification)
+  docker> show collections
+  ```
+
+  If the restoration was successful, it would list the following collections
+
+  ```
+  advancedtags
+  appprofiles
+  appstores
+  audits
+  campaigns
+  clocks
+  compositionreports
+  contentrepos
+  contents
+  entities
+  groups
+  languages
+  licences
+  onsitepartners
+  partners
+  plans
+  playnows
+  roles
+  schedules
+  screens
+  screenshots
+  stations
+  tags
+  users
+  uuids
+  ```
+
+- Now exit `mongosh` & mongo container using `exit` command twice (one for mongo shenn & then one for our container)
+
+  ```
+  docker> exit
+  # exit
+  ```
 
 - Now connect to a wifi network using
 
@@ -105,4 +151,4 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
 
 - This will restart our server & we're ready to go.
 
-To test the scripts & services that are being used in the ISO, look at _scripts_ & _services_ directories in [this repo](https://github.com/biraj-pickcel/custom-iso-with-docker).
+To check out the scripts & services that are being used in the ISO, look at _scripts_ & _services_ directories in [this repo](https://github.com/biraj-pickcel/custom-iso-with-docker).
