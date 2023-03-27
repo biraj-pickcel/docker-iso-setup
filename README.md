@@ -45,7 +45,7 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
 - **Note: All the following commands are meant to be run on host system unless the container is explictly mentioned.**
 
 - Also to avoid the confusion & know whether you're in our host system or inside the docker system, you can look at the prompt. First check out this image
-  ![Screenshot](images/host-vs-container.png)
+  ![host vs container screenshot](images/host-vs-container.png)
 
   As you can see, host system's prompt (left half) will show current directory like
 
@@ -155,11 +155,28 @@ This is a custom ISO based on [Ubuntu Server 20.04](https://releases.ubuntu.com/
 - After getting in our backend container, edit the _.env_ using `vi` & set the following keys with the ip that we got.
 
   ```
+  # vi .env  (inside our container)
+  ```
+
+- After opening _.env_ with `vi`, you need to type `i` to start editing the file.
+- Then edit the following values
+
+  ```
   SERVER_NAME=192.168....
   PICKCEL_SERVER_HOST='http://192.168....'
   ```
 
-- Now exit the container & run
+- Once you're done with the changes, press `ESC` type `:wq` & hit `ENTER` to save & exit
+
+  ![vi .env editing screenshot](images/vi.jpeg)
+
+- Exit the container using `exit` command.
+
+  ```
+  # exit  (inside our container)
+  ```
+
+- Now you're back to your linux host when you have to exexute
 
   ```
   # cd /.pickcel
